@@ -1,14 +1,14 @@
 @font-face {
     font-family: 'Inter';
-    src: url('path/to/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-    font-weight: 100 900; /* Range des poids disponibles pour la police variable */
+    src: url('Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: 100 900;
 }
 
 
 body, h1, p, a {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', 'Apple Symbols', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
     color: #c8c8c8;
     text-align: left;
 }
@@ -44,7 +44,7 @@ body {
     width: 100%;
     height: 100%;
     background: url('bg.jpg') no-repeat center center/cover;
-    filter: blur(50px); /* Blurred background effect */
+    filter: blur(20px); /* Blurred background effect */
     z-index: -1;
 }
 
@@ -214,14 +214,28 @@ h5 {
 }
 
 .igandth {
-    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
 }
 
-.footer {
-    position: relative;
-    padding-top: 600px;
+.ig svg, .th svg {
+    width: 20px; /* Increase icon size */
+    height: 20px;
 }
 
 .strange h3 {
     text-align: left;
+}
+
+h3 {
+    color: #f3f3f3;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px;
 }
