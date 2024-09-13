@@ -37,6 +37,7 @@ body {
     position: relative;
 }
 
+/* 
 .background-image {
     position: absolute;
     top: 0;
@@ -44,9 +45,40 @@ body {
     width: 100%;
     height: 100%;
     background: url('bg.jpg') no-repeat center center/cover;
-    filter: blur(20px); /* Blurred background effect */
+    filter: blur(20px);
     z-index: -1;
 }
+*/
+
+/* Animation pour le zoom du dégradé radial */
+@keyframes zoomGradient {
+    0% {
+        background-size: 100% 100%;
+        background-position: center;
+    }
+    50% {
+        background-size: 150% 150%; /* Zoomer sur le dégradé */
+        background-position: center;
+    }
+    100% {
+        background-size: 100% 100%;
+        background-position: center;
+    }
+}
+
+.background-gradient {
+    animation: zoomGradient 6s ease-in-out infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #794840, #a9a18b, #433229, #201a15);
+    background-size: 100% 100%; /* Taille initiale du dégradé */
+    background-position: center; /* Centrer le dégradé */
+    z-index: -1;
+}
+   
 
 .container {
     width: 90%;
@@ -147,6 +179,7 @@ body {
 /* Platform-specific colors */
 .spotify { 
     background-color: #208b46; 
+    fill-opacity: 50%;
 }
 
 .spotify:hover{
@@ -154,14 +187,14 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-.youtube { background-color: #aa1010; }
+.youtube { background-color: #aa1010; fill-opacity: 50%; }
 
 .youtube:hover{
     box-shadow: 0 5px 15px #aa1010;
     transition: all 0.2s ease-in-out;
 }
 
-.deezer { background-color: #6937b5; }
+.deezer { background-color: #6937b5; fill-opacity: 50%; }
 
 
 .deezer:hover{
@@ -169,7 +202,7 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-.apple-music { background-color: #b01949; }
+.apple-music { background-color: #b01949; fill-opacity: 50%; }
 
 .apple-music:hover{
     box-shadow: 0 5px 15px #b01949;
@@ -239,3 +272,38 @@ footer {
     text-align: center;
     margin-top: 10px;
 }
+
+/* Ajouter les animations de fondu en cascade */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.social-buttons-container .platform {
+    opacity: 0; 
+    animation: fadeIn 1s forwards; 
+}
+
+.social-buttons-container .spotify {
+    animation-delay: 0.15s; 
+}
+
+.social-buttons-container .youtube {
+    animation-delay: 0.3s;
+}
+
+.social-buttons-container .deezer {
+    animation-delay: 0.45s; 
+}
+
+.social-buttons-container .apple-music {
+    animation-delay: 0.6s; 
+}
+
+
